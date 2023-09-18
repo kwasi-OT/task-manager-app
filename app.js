@@ -32,5 +32,11 @@ app.controller(MainController, function ($scope, $http) {
             });
     };
 
+    // Function to edit a task
+    $scope.editTask = function (task) {
+        $scope.editing = true;
+        $scope.editTaskData = angular.copy(task);
+    };
+
     
 });
