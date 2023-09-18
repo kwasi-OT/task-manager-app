@@ -51,5 +51,16 @@ app.controller(MainController, function ($scope, $http) {
             });
     };
 
+    // Function to delete a task
+    $scope.deleteTask = function (task) {
+        $http.delete('http://api-url/tasks/' + task.id)
+            .then(function () {
+                loadTasks();
+            })
+            .catch(function (error) {
+                console.error('Error deleting task:', error);
+            });
+    };
+
     
 });
