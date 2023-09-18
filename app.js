@@ -9,7 +9,7 @@ app.controller(MainController, function ($scope, $http) {
 
     // Function to load tasks from API
     function loadTasks() {
-        $http.get('http://your-api-url/tasks')
+        $http.get('http://api-url/tasks')
             .then(function (response) {
                 $scope.tasks = response.data;
             })
@@ -19,6 +19,18 @@ app.controller(MainController, function ($scope, $http) {
     }
 
     loadTasks();
+
+    // Function to add a new task
+    $scope.addTask = function () {
+        $http.post('http://api-url/tasks', $scope.newTask)
+            .then(function () {
+                loadTasks();
+                $scope.newTask = {};
+            })
+            .catch(function (error) {
+                console.error('Error adding task:', error);
+            });
+    };
 
     
 });
