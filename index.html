@@ -1,12 +1,22 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="taskApp">
+<html lang="en" ng-app="taskApp" ng-csp>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Task Manager App</title>
 </head>
-<body>
+<body ng-controller="MainController">
+    <!-- General app content -->
+    <div>
+        <h1>Task Manager App</h1>
+        <!-- form to add task -->
+        <form ng-submit="addTask()">
+            <input type="text" ng-model="newTask.title" placeholder="Task Title" required>
+            <input type="text" ng-model="newTask.description" placeholder="Task Description" required>
+            <button type="submit">Add Task</button>
+        </form>
+    </div>
     
 </body>
 </html>
