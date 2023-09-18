@@ -62,5 +62,12 @@ app.controller(MainController, function ($scope, $http) {
             });
     };
 
-    
+    // Function to toggle task completion
+    $scope.toggleCompletion = function (task) {
+        task.completed = !task.completed;
+        $http.put('http://api-url/tasks/' + task.id, task)
+            .catch(function (error) {
+                console.error('Error toggling completion:', error);
+            });
+    };
 });
