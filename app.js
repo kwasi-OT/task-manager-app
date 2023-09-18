@@ -38,5 +38,18 @@ app.controller(MainController, function ($scope, $http) {
         $scope.editTaskData = angular.copy(task);
     };
 
+    // Function to save edited task
+    $scope.saveTask = function () {
+        $http.put('http://api-url/tasks/' + $scope.editTaskData.id, $scope.editTaskData)
+            .then(function () {
+                loadTasks();
+                $scope.editTaskData = {};
+                $scope.editing = false;
+            })
+            .catch(function (error) {
+                console.error('Error editing task:', error);
+            });
+    };
+
     
 });
