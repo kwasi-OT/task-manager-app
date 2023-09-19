@@ -40,7 +40,7 @@ app.controller('MainController', function ($scope, $http) {
 
     // Function to save edited task
     $scope.saveTask = function () {
-        $http.put('https://task-manager-api-kwasi-ot.vercel.app/tasks/:id' + $scope.editTaskData.id, $scope.editTaskData)
+        $http.put('https://task-manager-api-kwasi-ot.vercel.app/tasks/' + $scope.editTaskData.id, $scope.editTaskData)
             .then(function () {
                 loadTasks();
                 $scope.editTaskData = {};
@@ -53,7 +53,7 @@ app.controller('MainController', function ($scope, $http) {
 
     // Function to delete a task
     $scope.deleteTask = function (task) {
-        $http.delete('https://task-manager-api-kwasi-ot.vercel.app/tasks/:id' + task.id)
+        $http.delete('https://task-manager-api-kwasi-ot.vercel.app/tasks/' + task.id)
             .then(function () {
                 loadTasks();
             })
@@ -65,7 +65,7 @@ app.controller('MainController', function ($scope, $http) {
     // Function to toggle task completion
     $scope.toggleCompletion = function (task) {
         task.completed = !task.completed;
-        $http.put('https://task-manager-api-kwasi-ot.vercel.app/tasks/:id/complete' + task.id, task)
+        $http.put('https://task-manager-api-kwasi-ot.vercel.app/tasks/' + task.id + '/completed', task)
             .catch(function (error) {
                 console.error('Error toggling completion:', error);
             });
