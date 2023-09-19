@@ -1,7 +1,7 @@
 // declare angular module
 var app = angular.module('taskApp', []);
 
-app.controller(MainController, function ($scope, $http) {
+app.controller('MainController', function ($scope, $http) {
     $scope.tasks = [];
     $scope.newTask = {};
     $scope.editing = false;
