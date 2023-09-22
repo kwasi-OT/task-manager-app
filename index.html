@@ -18,7 +18,7 @@
         </form>
         <!-- Task List -->
         <ul>
-            <li ng-repeat="task in tasks" ng-class="{'completed': task.completed}">
+            <li ng-repeat="task in tasks | filter: {completed: !filterCompleted}" ng-class="{'completed': task.completed}">
                 <span>{{task.title}}</span>
                 <span>{{task.description}}</span>
                 <button ng-click="editTask(task)">Edit</button>
@@ -26,6 +26,10 @@
                 <button ng-click="toggleCompletion(task)">Toggle Completion</button>
             </li>
         </ul>
+        <div>
+            <!-- Filter input -->
+            <input type="checkbox" ng-model="filterCompleted"> Show Completed Tasks
+        </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
