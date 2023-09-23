@@ -72,6 +72,12 @@ app.controller('MainController', function ($scope, $http) {
                 console.error('Error toggling completion:', error);
             });
     };
+
+     // Custom filter function
+        $scope.customFilter = function (task) {
+            // If filterCompleted is true, show completed tasks; if false, show all tasks
+            return $scope.filterCompleted ? task.completed : true;
+    };
 });
 
 
