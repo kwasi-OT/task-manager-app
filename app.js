@@ -12,7 +12,6 @@ app.controller('MainController', function ($scope, $http) {
         $http.get('https://taskmanager.iamkwasi.dev/tasks.php/')
             .then(function (response) {
                 $scope.tasks = response.data;
-                console.log($scope.tasks);
             })
             .catch(function (error) {
                 console.error('Error loading tasks:', error);
