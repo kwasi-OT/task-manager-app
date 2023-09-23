@@ -9,7 +9,7 @@ app.controller('MainController', function ($scope, $http) {
 
     // Function to load tasks from API
     function loadTasks() {
-        $http.get('http://your-server-url/tasks.php')
+        $http.get('https://taskmanager.iamkwasi.dev/tasks.php')
             .then(function (response) {
                 $scope.tasks = response.data;
             })
@@ -22,7 +22,7 @@ app.controller('MainController', function ($scope, $http) {
 
     // Function to add a new task
     $scope.addTask = function () {
-        $http.post('http://your-server-url/tasks.php', $scope.newTask)
+        $http.post('https://taskmanager.iamkwasi.dev/tasks.php', $scope.newTask)
             .then(function () {
                 loadTasks();
                 $scope.newTask = {};
@@ -41,7 +41,7 @@ app.controller('MainController', function ($scope, $http) {
 
     // Function to save edited task
     $scope.saveTask = function () {
-        $http.put('http://your-server-url/tasks.php', $scope.editTaskData)
+        $http.put('https://taskmanager.iamkwasi.dev/tasks.php', $scope.editTaskData)
             .then(function () {
                 loadTasks();
                 $scope.editTaskData = {};
@@ -54,7 +54,7 @@ app.controller('MainController', function ($scope, $http) {
 
     // Function to delete a task
     $scope.deleteTask = function (task) {
-        $http.delete('http://your-server-url/tasks.php?id=' + task.id)
+        $http.delete('https://taskmanager.iamkwasi.dev/tasks.php?id=' + task.id)
             .then(function () {
                 loadTasks();
             })
@@ -66,7 +66,7 @@ app.controller('MainController', function ($scope, $http) {
     // Function to toggle task completion
     $scope.toggleCompletion = function (task) {
         task.completed = !task.completed;
-        $http.put('http://your-server-url/tasks.php', task)
+        $http.put('https://taskmanager.iamkwasi.dev/tasks.php', task)
             .catch(function (error) {
                 console.error('Error toggling completion:', error);
             });
