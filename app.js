@@ -9,9 +9,10 @@ app.controller('MainController', function ($scope, $http) {
 
     // Function to load tasks from API
     function loadTasks() {
-        $http.get('https://taskmanager.iamkwasi.dev/tasks.php')
+        $http.get('https://taskmanager.iamkwasi.dev/tasks.php/')
             .then(function (response) {
                 $scope.tasks = response.data;
+                console.log($scope.tasks);
             })
             .catch(function (error) {
                 console.error('Error loading tasks:', error);
