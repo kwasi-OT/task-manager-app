@@ -8,40 +8,43 @@
 </head>
 <body ng-controller="MainController">
     <!-- General app content -->
-    <div>
+    <header>
         <h1>Task Manager</h1>
-
-        <!-- form to add task -->
-        <form ng-if="!editing" ng-submit="addTask()">
-            <input type="text" ng-model="newTask.title" placeholder="Task Title" required>
-            <input type="text" ng-model="newTask.description" placeholder="Task Description" required>
-            <button type="submit">Add Task</button>
-        </form>
-
-        <!-- form to edit task -->
-        <form ng-if="editing" ng-submit="saveTask()">
-            <!-- Editing form fields go here -->
-            <input type="text" ng-model="editTaskData.title" placeholder="Edit Task Title" required>
-            <input type="text" ng-model="editTaskData.description" placeholder="Edit Task Description" required>
-            <button type="submit">Save Task</button>
-            <button ng-click="editing = false">Cancel</button>
-        </form>
-
-        <!-- Task List -->
-        <ul>
-            <li ng-repeat="task in tasks | filter: customFilter" ng-class="{'completed': !task.completed}">
-                <span>{{task.title}}</span>
-                <span>{{task.description}}</span>
-                <button ng-click="editTask(task)">Edit</button>
-                <button ng-click="deleteTask(task)">Delete</button>
-                <button ng-click="toggleCompletion(task)">Toggle Completion</button>
-            </li>
-        </ul>
+    </header>
+    <main>
         <div>
-            <!-- Filter input -->
-            <input type="checkbox" ng-model="filterCompleted"> Show Completed Tasks
+            <!-- form to add task -->
+            <form ng-if="!editing" ng-submit="addTask()">
+                <input type="text" ng-model="newTask.title" placeholder="Task Title" required>
+                <input type="text" ng-model="newTask.description" placeholder="Task Description" required>
+                <button type="submit">Add Task</button>
+            </form>
+    
+            <!-- form to edit task -->
+            <form ng-if="editing" ng-submit="saveTask()">
+                <!-- Editing form fields go here -->
+                <input type="text" ng-model="editTaskData.title" placeholder="Edit Task Title" required>
+                <input type="text" ng-model="editTaskData.description" placeholder="Edit Task Description" required>
+                <button type="submit">Save Task</button>
+                <button ng-click="editing = false">Cancel</button>
+            </form>
+    
+            <!-- Task List -->
+            <ul>
+                <li ng-repeat="task in tasks | filter: customFilter" ng-class="{'completed': !task.completed}">
+                    <span>{{task.title}}</span>
+                    <span>{{task.description}}</span>
+                    <button ng-click="editTask(task)">Edit</button>
+                    <button ng-click="deleteTask(task)">Delete</button>
+                    <button ng-click="toggleCompletion(task)">Toggle Completion</button>
+                </li>
+            </ul>
+            <div>
+                <!-- Filter input -->
+                <input type="checkbox" ng-model="filterCompleted"> Show Completed Tasks
+            </div>
         </div>
-    </div>
+    </main>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <script src="app.js"></script>
