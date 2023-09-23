@@ -1,74 +1,142 @@
-.completed {
-    text-decoration: line-through;
-    color: #888;
-}
 
 /* Set a background color for the entire body */
 body {
-    background-color: gray;
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
 }
 
-/* Style the header with a blue background */
+/* Style the header with a blue background image */
 header {
-    background-color: blue;
+    background: url(./assets/time.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 40vh;
     width: 100%;
-    text-align: center; /* Center text horizontally */
-    display: flex; /* Enable vertical centering */
-    align-items: center; /* Center items vertically */
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
 }
 
 /* Style the h1 heading inside the header */
 header h1 {
-    color: white; /* Text color */
-    font-size: 2rem; /* Adjust the font size as needed */
+    color: white; 
+    font-size: 3rem; 
 }
 
+/* Give body background color */
+body {
+    background-color: #f0f5f5;
+}
+
+
 /* Style the main content container */
-main {
+.mainContainer {
     background-color: white;
-    padding: 20px; /* Add padding to the content */
-    width: 80vw;
-    margin: 0 auto; /* Center the content horizontally */
-    min-height: 60vh; /* Ensure a minimum height for content */
+    width: 80%;
+    border-radius: 0.7rem;
+    position: relative;
+    top: -1.5rem;
+    padding: 2rem 0;
+    margin: 0 auto; 
+    height: fit-content; 
     display: flex;
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items horizontally */
-    justify-content: center; /* Center items vertically */
+    flex-direction: column; 
+    gap: 2rem;
+    justify-content: center; 
+}
+
+/* Style forms container */
+.formsContainer {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Style input fields */
+input[type="text"] {
+    width: 90%;
+    padding: 0.7rem;
+    border-radius: 0.3rem;
+    border: none;
+    outline: 0.031rem solid #a3c2c2;
+    font-size: larger;
+}
+
+/* Change input outline color when in focus */
+input[type="text"]:focus {
+    outline: 0.031rem solid #ff8533;
+}
+
+/* Style form buttons */
+.formButtons {
+    border: none;
+    outline: none;
+    background-color: #4775d1;
+    background-color: #ff944d;
+    padding: 1rem 2.5rem;
+    border-radius: 0.3rem;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 1rem; 
+}
+
+.formButtons:hover {
+    background: none;
+    color: #ff944d;
+    outline: 0.031rem solid #ff944d;
+}
+
+/* Style edit buttons */
+.editButtons {
+    display: flex;
+    gap: 1rem;
 }
 
 /* Style the forms and lists */
-form, ul {
-    width: 100%; /* Occupy full width of the container */
-    max-width: 400px; /* Limit the width to improve readability */
-    margin: 10px 0; /* Add vertical spacing between forms and lists */
+.listContainer {
+    margin: 0 auto;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
 }
 
 /* Center the form vertically */
 form {
     display: flex;
-    flex-direction: column; /* Stack form elements vertically */
-    align-items: center; /* Center form elements horizontally */
+    flex-direction: column; 
+    align-items: center; 
+    gap: 0.5rem;
 }
 
-/* Style the buttons within forms */
-form button {
-    margin-top: 10px; /* Add spacing between form elements and buttons */
+ul {
+    margin: 0 auto;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Style the list items */
-ul li {
-    list-style: none; /* Remove list bullets */
-    padding: 10px; /* Add padding to each list item */
-    border: 1px solid #ddd; /* Add a border for separation */
-    margin: 5px 0; /* Add spacing between list items */
+li {
+    width: 100%;
+    list-style: none; 
+    padding: 1rem; 
+    border: 1px solid #ddd; 
+    margin: 0 auto; 
     display: flex;
-    justify-content: space-between; /* Align items horizontally with space between them */
+    align-items: center;
+    justify-content: space-between; 
 }
 
 /* Apply 'completed' style to completed tasks */
-ul li.completed {
-    background-color: lightgreen; /* Background color for completed tasks */
+.completed {
+    text-decoration: line-through;
+    color: #888;
+    background-color: #f0f5f5;
 }
