@@ -4,6 +4,7 @@ body {
     margin: 0; 
     padding: 0; 
     box-sizing: border-box;
+    background-color: #f0f5f5;
 }
 
 /* Style the header with a blue background image */
@@ -25,11 +26,6 @@ header h1 {
     font-size: 3rem; 
 }
 
-/* Give body background color */
-body {
-    background-color: #f0f5f5;
-}
-
 
 /* Style the main content container */
 .mainContainer {
@@ -49,9 +45,21 @@ body {
 
 /* Style forms container */
 .formsContainer {
-    width: 90%;
+    width: 90% !important;
     margin: 0 auto;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    height: fit-content;
+}
+
+/* Center the form vertically */
+form {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    gap: 0.5rem;
 }
 
 /* Style input fields */
@@ -97,41 +105,43 @@ input[type="text"]:focus {
 
 /* Style the forms and lists */
 .listContainer {
-    margin: 0 auto;
-    width: 90%;
+    margin: 0 auto !important;
+    width: 100%;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
 }
 
-/* Center the form vertically */
-form {
+
+/* Style the list items */
+li {
+    width: 90% !important;
+    height: fit-content;
+    list-style: none; 
+    padding: 1rem;
+    border: none; 
+    outline: 1px solid #ddd; 
+    margin: 5px auto; 
     display: flex;
-    flex-direction: column; 
-    align-items: center; 
-    gap: 0.5rem;
+    justify-content: space-between; 
 }
 
-ul {
-    margin: 0 auto;
-    width: 90%;
+.span {
+    width: 60%;
+}
+
+.listButtons {
+    width: 40%;
     display: flex;
-    flex-direction: column;
+    gap: 0.3rem;
     justify-content: center;
     align-items: center;
 }
 
-/* Style the list items */
-li {
-    width: 100%;
-    list-style: none; 
-    padding: 1rem; 
-    border: 1px solid #ddd; 
-    margin: 0 auto; 
-    display: flex;
-    align-items: center;
-    justify-content: space-between; 
+.listButtons button {
+    cursor: pointer;
 }
 
 /* Apply 'completed' style to completed tasks */
