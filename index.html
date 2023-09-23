@@ -10,7 +10,7 @@
     <!-- General app content -->
     <div>
         <h1>Task Manager App</h1>
-        
+
         <!-- form to add task -->
         <form ng-submit="addTask()">
             <input type="text" ng-model="newTask.title" placeholder="Task Title" required>
@@ -24,6 +24,7 @@
             <input type="text" ng-model="editTaskData.title" placeholder="Edit Task Title" required>
             <input type="text" ng-model="editTaskData.description" placeholder="Edit Task Description" required>
             <button type="submit">Save Task</button>
+            <button ng-click="editing = false">Cancel</button>
         </form>
 
         <!-- Task List -->
