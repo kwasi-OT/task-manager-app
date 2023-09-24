@@ -111,27 +111,28 @@ input[type="text"]:focus {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* text-align: center; */
 }
 
 
 /* Style the list items */
 li {
-    width: 90% !important;
+    width: 94%;
     height: fit-content;
     list-style: none; 
     padding: 1rem;
     border: none; 
     outline: 1px solid #ddd; 
-    margin: 5px auto; 
     display: flex;
     justify-content: space-between; 
+    gap: 1rem;
 }
 
 .span {
-    width: 60%;
+    width: 65%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .titleSpan {
@@ -139,12 +140,11 @@ li {
 }
 
 .listButtons {
-    width: 40%;
+    width: 30%;
     display: flex;
     gap: 0.3rem;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-end;
 }
 
 .listButtons button {
