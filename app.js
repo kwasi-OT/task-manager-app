@@ -66,9 +66,12 @@ app.controller('MainController', function ($scope, $http) {
     // Function to toggle task completion
     $scope.toggleCompletion = function (task) {
         task.completed = !task.completed;
+        // Send the updated completion status as a boolean
         $http.put('https://taskmanager.iamkwasi.dev/tasks.php', task)
             .catch(function (error) {
                 console.error('Error toggling completion:', error);
+                // If there's an error, revert the completion status in the frontend
+                task.completed = !task.completed;
             });
     };
 
