@@ -151,6 +151,29 @@ li {
     cursor: pointer;
 }
 
+/* Style list buttons */
+.editButton {
+    border: none;
+    background-color: #00e64d;
+    background-color: #4d4dff;
+}
+
+.deleteButton {
+    border: none;
+    background-color: #ff5c33;
+}
+
+.toggleButton {
+    border: none;
+    background-color: #b3cccc;
+}
+
+.editButton, .deleteButton, .toggleButton {
+    padding: 0.5rem 1rem;
+    border-radius: 0.2rem;
+    color: #fff;
+}
+
 /* Apply 'completed' style to completed tasks */
 .completed {
     text-decoration: line-through;

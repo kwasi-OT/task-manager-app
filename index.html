@@ -45,9 +45,9 @@
                                 <span>{{task.description}}</span>
                             </div>
                             <div class="listButtons">
-                                <button ng-click="editTask(task)">Edit</button>
-                                <button ng-click="deleteTask(task)">Delete</button>
-                                <button ng-click="toggleCompletion(task)">Toggle Completion</button>
+                                <button class="editButton" ng-click="editTask(task)">Edit</button>
+                                <button class="deleteButton" ng-click="deleteTask(task)">Delete</button>
+                                <button class="toggleButton" ng-click="toggleCompletion(task)">Toggle Completion</button>
                             </div>
                         </li>
                     </ul>
