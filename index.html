@@ -41,7 +41,7 @@
                     <ul>
                         <li ng-repeat="task in tasks | filter: customFilter" ng-class="{'completed': !task.completed}">
                             <div class="span">
-                                <span>{{task.title}}</span>
+                                <span class="titleSpan">{{task.title}}</span>
                                 <span>{{task.description}}</span>
                             </div>
                             <div class="listButtons">

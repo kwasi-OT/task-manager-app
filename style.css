@@ -111,7 +111,7 @@ input[type="text"]:focus {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    text-align: center;
+    /* text-align: center; */
 }
 
 
@@ -130,6 +130,12 @@ li {
 
 .span {
     width: 60%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.titleSpan {
+    font-weight: 700;
 }
 
 .listButtons {
