@@ -81,7 +81,6 @@ input[type="text"]:focus {
 .formButtons {
     border: none;
     outline: none;
-    background-color: #4bce56;
     background-color: #39ac73;
     padding: 1rem 2.5rem;
     border-radius: 0.3rem;
@@ -92,6 +91,12 @@ input[type="text"]:focus {
 }
 
 .formButtons:hover {
+    background: none;
+    color: #4bce56;
+    outline: 0.031rem solid #4bce56;
+}
+
+.formButtons:focus {
     background: none;
     color: #4bce56;
     outline: 0.031rem solid #4bce56;
